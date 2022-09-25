@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {usuarios} from "./users"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+
+
+const App = () =>{
+
+    //const user = usuarios.find(item => item.edad === 30);
+    //clonar un usuario
+    //const newUser = {...user}
+    //clonar un arreglo
+    const newUsers = [...usuarios]
+
+    //return <div>{newUser.edad}</div>;
+    return <div>{ newUsers[0].edad }</div>;
+};
+export default App
