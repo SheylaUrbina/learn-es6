@@ -6,13 +6,19 @@ import {usuarios} from "./users"
 
 const App = () =>{
 
-    //const user = usuarios.find(item => item.edad === 30);
-    //clonar un usuario
-    //const newUser = {...user}
-    //clonar un arreglo
-    const newUsers = [...usuarios]
-
-    //return <div>{newUser.edad}</div>;
-    return <div>{ newUsers[0].edad }</div>;
+    const renderItems = () => {
+        return usuarios.map(item => {
+          return (
+            <div>
+                <h1>{item.trabajo}</h1>
+                <p>{item.usuario}</p>
+                <p>{`${item.edad} años de edad.`}</p>
+            </div>
+          )  
+        })
+    } 
+    return(
+        usuarios.length === 0 ? <div>No se encontraron usuarios</div>: renderItems()
+    )
 };
 export default App
